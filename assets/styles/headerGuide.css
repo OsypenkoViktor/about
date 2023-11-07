@@ -1,0 +1,55 @@
+/*стилі для анімації випадаючого списку в хедері*/
+
+/*стилі обгортки випадаючого списку*/
+.guide {
+  overflow: hidden;
+  /*поява опцій при наведенні*/
+  &:hover .guideOptions {
+    max-height: 600px;
+  }
+  /*анімація батьківського єлементу списку*/
+  &:hover .guideTitle {
+    color: rgb(255, 255, 255);
+    text-shadow: -5px 2px 5px black, 5px 2px 5px black;
+  }
+  /*анімація стрілочок*/
+  &:hover .guideTitle::after,
+  &:hover .guideTitle::before {
+    transform: rotate(90deg);
+  }
+}
+/*стилі батьківського елементу списку*/
+.guideTitle {
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  text-align: center;
+  transition: text-shadow 0.3s linear, color 0.6s ease-in-out;
+  &::after {
+    content: url("../images/guideArrow.png");
+    display: inline-block;
+    position: relative;
+    left: 10px;
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+  }
+  &::before {
+    content: url("../images/guideArrow.png");
+    display: inline-block;
+    position: relative;
+    right: 10px;
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+  }
+}
+/*стилі дочірніх елементів*/
+.guideOptions {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-items: center;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
