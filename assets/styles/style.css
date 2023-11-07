@@ -1,0 +1,29 @@
+/*стилі основної теми*/
+:root {
+  --bg-color-main: #e4e4e4;
+  --font-color: rgb(49, 47, 47);
+  --button-bgc: #ffffff;
+  color-scheme: light;
+}
+/* стилі темної теми*/
+.dark {
+  --bg-color-main: #1a1a1a;
+  --font-color: rgb(232, 240, 167);
+  --button-bgc: #000000;
+  color-scheme: dark;
+}
+body {
+  font-family: "Oswald";
+  font-weight: 400;
+  background-color: var(--bg-color-main);
+  color: var(--font-color);
+  transition: background-color 0.3s linear;
+}
+button {
+  font-family: "Oswald";
+  font-weight: 500;
+  background-color: var(--button-bgc);
+  &:hover {
+    cursor: pointer;
+  }
+}
