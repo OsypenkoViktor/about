@@ -1,8 +1,12 @@
 /*стилі основної теми*/
+* {
+  box-sizing: border-box;
+}
 :root {
   --bg-color-main: #e4e4e4;
   --font-color: rgb(49, 47, 47);
   --button-bgc: #ffffff;
+  --theme-switcher: #000000;
   color-scheme: light;
 }
 /* стилі темної теми*/
@@ -30,14 +34,16 @@ button {
 }
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 a {
   color: inherit;
+  font-size: 1.5em;
   &:hover {
-    color: rgb(255, 255, 255);
-    text-shadow: 3px 3px 10px black, -3px -3px 10px black;
+    color: var(--bg-color-main);
+    text-shadow: 3px 3px 10px var(--font-color),
+      -3px -3px 10px var(--font-color);
   }
   transition: text-shadow 0.3s linear, color 0.6s ease-in-out;
 }
@@ -60,4 +66,37 @@ p {
 
 .intro {
   margin-right: 20px;
+}
+
+.switcher {
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  width: 60px;
+  height: 27px;
+  background-color: #fff;
+  border: 1px black solid;
+  border-radius: 40px;
+  &::after {
+    content: "";
+    height: 23px;
+    width: 23px;
+    background-color: var(--theme-switcher);
+    border-radius: 50%;
+    z-index: 1;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+  }
+}
+
+.switcher-on::after {
+  left: 32px;
+}
+
+.switcherContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }

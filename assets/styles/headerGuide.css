@@ -9,18 +9,18 @@
   }
   /*анімація батьківського єлементу списку*/
   &:hover .guideTitle {
-    color: rgb(255, 255, 255);
-    text-shadow: -5px 2px 5px black, 5px 2px 5px black;
+    cursor: pointer;
+    color: var(--bg-color-main);
+    text-shadow: -5px 2px 5px var(--font-color), 5px 2px 5px var(--font-color);
   }
   /*анімація стрілочок*/
-  &:hover .guideTitle::after,
-  &:hover .guideTitle::before {
+  &:hover .guideTitle::after {
     transform: rotate(90deg);
   }
 }
 /*стилі батьківського елементу списку*/
 .guideTitle {
-  padding: 10px;
+  font-size: 1.5em;
   margin: 10px;
   width: 300px;
   text-align: center;
@@ -30,14 +30,6 @@
     display: inline-block;
     position: relative;
     left: 10px;
-    transform: rotate(-90deg);
-    transition: transform 0.3s ease;
-  }
-  &::before {
-    content: url("../images/guideArrow.png");
-    display: inline-block;
-    position: relative;
-    right: 10px;
     transform: rotate(-90deg);
     transition: transform 0.3s ease;
   }
