@@ -15,11 +15,8 @@ const body = document.querySelector("body");
 const introCard = document.querySelector(".intro");
 const skillsTable = document.querySelector(".skillTable");
 
-
-
-
         window.addEventListener("scroll", () => {
-          isElementInViewport(introCard) &&(body.style.backgroundImage = "url('assets/images/introBG.jpg')")
-          isElementInViewport(skillsTable) && (body.style.backgroundImage = "url('assets/images/skillsTableBG.jpg')")
+          isElementInViewport(introCard) &&(body.style.setProperty('--bgImage', "url('../images/introBG.jpg')"))
+          isElementInViewport(skillsTable) &&(body.style.setProperty('--bgImage', "url('../images/skillsTableBG.jpg')"))
       });
       

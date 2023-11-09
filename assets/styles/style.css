@@ -10,6 +10,7 @@
   --font-color: rgb(49, 47, 47);
   --button-bgc: #ffffff;
   --theme-switcher: #000000;
+  --bgImage: url("../images/introBG.jpg");
   color-scheme: light;
   height: 100%;
 }
@@ -25,12 +26,25 @@
 body {
   font-family: "Oswald";
   font-weight: 400;
-  background-image: url("../images/introBG.jpg");
-  background-size: cover;
+  /* background-image: var(--bgImage); */
+  /*   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  transition: background-image 1s linear;
+  transition: background-image 1s ease 0.2s; */
   color: var(--font-color);
+  &::after {
+    content: "";
+    background-image: var(--bgImage);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    transition: background-image 0.5s ease 0.2s;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: -5;
+  }
 }
 button {
   font-family: "Oswald";
