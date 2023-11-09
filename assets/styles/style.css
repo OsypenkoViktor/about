@@ -18,7 +18,7 @@
 .dark {
   --bg-color-main: rgba(26, 26, 26, 0.8);
   --bg-mask-color: rgba(26, 26, 26, 0.2);
-  --font-color: rgb(232, 240, 167);
+  --font-color: rgb(255, 255, 255);
   --button-bgc: #000000;
   color-scheme: dark;
 }
@@ -53,6 +53,7 @@ nav {
   display: flex;
   position: fixed;
   width: 100%;
+  align-items: center;
   justify-content: space-between;
   background-color: var(--bg-color-main);
 }
@@ -79,13 +80,36 @@ p {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .mainInfoCard {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: start;
+    align-items: center;
+  }
+  .intro {
+    margin: 15px;
+    overflow: hidden;
+    height: auto;
+    font-size: 2em;
+  }
+  .photo {
+    width: 70% !important;
+    padding-top: 15vw;
+  }
+  nav {
+    height: 15vw;
+  }
+}
 .photo {
-  width: 40vw;
+  width: 40%;
   margin: 50px;
 }
 
 .intro {
   margin-right: 20px;
+  max-height: 90vw;
   background-color: var(--bg-color-main);
   padding: 10px;
   overflow: auto;
@@ -125,8 +149,11 @@ p {
   text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
   padding-bottom: 13px;
+  padding-right: 20px;
+  width: 20vw;
 }
 
 .stackCard {
@@ -146,4 +173,67 @@ p {
   text-align: center;
   background-color: var(--bg-color-main);
   font-size: 1.5em;
+}
+
+.dynamicTitle {
+  margin-left: 30px;
+  text-align: center;
+  transition: text 1s ease-in-out;
+}
+.dynamicTitleContainer {
+  width: 20vw;
+}
+.fadeUp {
+  animation: fadeUp 0.5s linear;
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translate3d(0, 0px, 0);
+    opacity: 1;
+  }
+  80% {
+    transform: translate3d(0px, -20px, 20px);
+    opacity: 0;
+  }
+}
+.showUp {
+  animation: showUp 0.5s linear;
+}
+@keyframes showUp {
+  0% {
+    transform: translate3d(0, 30px, 0);
+    opacity: 0;
+  }
+  80% {
+    transform: translate3d(0, -10px, 0);
+    opacity: 1;
+  }
+}
+.fadeDown {
+  animation: fadeDown 0.5s linear;
+}
+@keyframes fadeDown {
+  0% {
+    transform: translate3d(0, 0px, 0);
+    opacity: 1;
+  }
+  80% {
+    transform: translate3d(0px, 20px, 20px);
+    opacity: 0;
+  }
+}
+
+.showDown {
+  animation: showDown 0.5s linear;
+}
+@keyframes showDown {
+  0% {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+  }
+  80% {
+    transform: translate3d(0, 0px, 0);
+    opacity: 1;
+  }
 }
