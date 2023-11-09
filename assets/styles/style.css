@@ -26,11 +26,6 @@
 body {
   font-family: "Oswald";
   font-weight: 400;
-  /* background-image: var(--bgImage); */
-  /*   background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  transition: background-image 1s ease 0.2s; */
   color: var(--font-color);
   &::after {
     content: "";
@@ -38,7 +33,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     position: fixed;
-    transition: background-image 0.5s ease 0.7s;
+    transition: background-image 1s ease 0.7s;
     top: 0px;
     right: 0px;
     bottom: 0px;
