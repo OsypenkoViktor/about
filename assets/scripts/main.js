@@ -1,6 +1,3 @@
-// Ваш кодовое слово: shrt
-// Пример без развернутых комментариев
-
 function isElementInViewport(element) {
   var rect = element.getBoundingClientRect();
   return (
@@ -73,7 +70,6 @@ function updatePage(newElem,newBackground,newDTitle){
     }
     
   }
-  //dynamicTitle.innerText = newDTitle;
 }
 //функція для оновлення сторінки в залежності від елементів у вьюпорті
 function renderPage(){
@@ -87,3 +83,23 @@ window.addEventListener("scroll", renderPage);
 
 renderPage()
 
+const modal = document.querySelector(".modal")
+const modalLinks = modal.querySelectorAll("a")
+const modalSidebar = modal.querySelector(".guideOptions")
+
+modalLinks.forEach((link)=>{
+  link.addEventListener("click",()=>{
+    modal.classList.add("hidden")
+    modalSidebar.classList.remove("setModalOptions")
+  })
+})
+dynamicTitle.addEventListener("click",()=>{
+  modal.classList.remove("hidden")
+  modal.classList.add("setModal")
+  modalSidebar.classList.add("setModalOptions")
+})
+
+modal.addEventListener("click",()=>{
+  modal.classList.add("hidden")
+  modalSidebar.classList.remove("setModalOptions")
+})
