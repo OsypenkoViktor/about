@@ -1,0 +1,25 @@
+@media (max-width: 768px) {
+  .photo {
+    width: auto;
+  }
+}
+@media (max-width: 550px) {
+  .intro {
+    width: 100%;
+    min-height: auto;
+  }
+  .mainInfoCard .photo {
+    width: 70%;
+    height: auto;
+  }
+
+  .container .mainInfoCard {
+    padding-top: 20%;
+  }
+}
+@media only screen and (orientation: landscape) and (max-width: 767px) {
+  nav .switcherContainer {
+    flex-direction: row;
+    padding: 0;
+  }
+}
