@@ -2,12 +2,6 @@
 
 /*стилі обгортки випадаючого списку*/
 .guide {
-  overflow: hidden;
-  /*поява опцій при наведенні*/
-  /*   &:hover .guideOptions {
-    max-height: 600px;
-  } */
-  /*анімація батьківського елементу списку*/
   &:hover .guideTitle {
     cursor: pointer;
     color: var(--bg-color-main);
@@ -22,11 +16,6 @@
     cursor: pointer;
   }
 }
-
-.opened {
-  max-height: 600px !important;
-}
-
 .dynamicTitleContainer {
   width: 20vw;
   min-width: 150px;

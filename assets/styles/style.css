@@ -78,10 +78,7 @@ p {
 }
 
 .mainInfoCard {
-  display: flex;
   height: 100vh;
-  justify-content: space-between;
-  align-items: center;
 }
 @media (max-width: 768px) {
   .mainInfoCard {
@@ -98,14 +95,7 @@ p {
     font-size: 1rem;
   }
   .photo {
-    width: 70% !important;
-    padding-top: 15vw;
-  }
-  nav {
-    height: 15vw;
-  }
-  .guideOptions {
-    margin-top: 50px !important;
+    width: 40vh !important;
   }
 }
 @media (max-width: 550px) {
@@ -126,18 +116,19 @@ p {
     width: 70% !important;
     padding-top: 15vw;
   }
-  nav {
-    height: 20vw;
-  }
 }
 .photo {
-  width: 40%;
-  margin: 50px;
+  width: 70vh;
+  margin-top: 10vw;
 }
 
 .intro {
+  position: relative;
   margin-right: 20px;
-  max-height: 90vw;
+  height: 50vw;
+  width: 50vh;
+  top: -35vw;
+  right: -60vh;
   background-color: var(--bg-color-main);
   padding: 10px;
   overflow: auto;
@@ -191,6 +182,11 @@ p {
   align-items: center;
 }
 
+.skillTable {
+  height: 90vh;
+  width: 100vw;
+}
+
 .skillTable td {
   width: 25vw;
   text-align: left;
@@ -207,14 +203,15 @@ p {
   display: none;
 }
 .modal {
-  position: absolute;
+  position: fixed;
   opacity: 0;
-  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  top: 0;
   background-color: rgba(26, 26, 26, 0.8);
   transition: display 3s ease;
+  z-index: 1000;
 }
 .guideOptions {
   position: fixed;
@@ -224,8 +221,10 @@ p {
   flex-direction: column;
   width: 200px;
   left: -300px;
-  height: 100vh;
+  top: 0;
+  bottom: 0;
   background-color: var(--bg-color-main);
+  z-index: 1001;
 }
 
 .setModal {
